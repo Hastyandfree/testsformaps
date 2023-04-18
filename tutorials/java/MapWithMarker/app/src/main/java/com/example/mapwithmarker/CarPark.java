@@ -13,7 +13,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 public class CarPark extends AppCompatActivity implements OnMapReadyCallback{
     public double Lat;
-
+//d
     public double Long;
     public int CarPark_ID;
     public LatLng CP_pos;
