@@ -23,7 +23,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
+import java.util.ArrayList;
+import java.util.List;
 /**
  * An activity that displays a Google map with a marker (pin) to indicate a particular location.
  */
@@ -72,6 +73,16 @@ public class MapsMarkerActivity extends AppCompatActivity
         // [START_EXCLUDE silent]
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         // [END_EXCLUDE]
+        CarPark test = new CarPark(-27.4705, 153.0260, 123);
+        CarPark test1 = new CarPark(34.00, 160.00, 124);
+        List<CarPark> allCarParks = CarPark.getAllInstances();
+        for (CarPark carPark : allCarParks){
+            googleMap.addMarker(new MarkerOptions()
+                    .position(carPark.CP_pos)
+                    .title(String.valueOf(carPark.CarPark_ID)));
+
+    }
+
     }
     // [END maps_marker_on_map_ready_add_marker]
 }
